@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature and Humidity</title>
+</head>
+<body>
+    {% if data %}
+    <h1>TEMPERATURE AND HUMIDITY MONITORING SYSTEM</h1>
+    
+    <table>
+        <thead>
+            <th>Temperature</th>
+            <th>Humidity</th>
+        </thead>
+        {% for value in data %}
+        <tr>
+            <td>{{value.temp}}</td>
+            <td>{{value.hum}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    
+</body>
+</html>
